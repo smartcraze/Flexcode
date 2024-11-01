@@ -57,9 +57,6 @@ export const metadata: Metadata = {
       "Join FlexCode to find project mates, complete industry-level projects, and earn rewards while collaborating with friends.",
     images: ["https://flexcode.in/images/flexcode-banner.jpg"], 
   },
-  icons: {
-    icon: "/fav.ico",
-  },
   robots: {
     index: true,
     follow: true,
@@ -73,6 +70,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <link rel="icon" href="/surajbg.png" sizes="any" />
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
