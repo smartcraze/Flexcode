@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -26,14 +26,14 @@ export default function Home() {
         <p className="text-center text-lg font-semibold text-gray-700 dark:text-gray-300">
           Stay tuned for more updates!
         </p>
-        <a
+        <Link
           href="https://smartcraze.online"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 px-6 py-3 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition-colors"
         >
           Visit My Portfolio
-        </a>
+        </Link>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <p className="text-gray-600 dark:text-gray-400">
