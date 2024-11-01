@@ -1,8 +1,9 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { Metadata } from "next";
-import type { Viewport } from 'next'
+import type { Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,8 +16,8 @@ const geistMono = localFont({
   weight: "100 900",
 });
 export const viewport: Viewport = {
-  themeColor: 'black',
-}
+  themeColor: "black",
+};
 export const metadata: Metadata = {
   title: "FlexCode - Your Project Hub for Student Collaboration",
   description:
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
     title: "FlexCode - Collaborate on Projects",
     description:
       "Join FlexCode to find project mates, complete industry-level projects, and earn rewards while collaborating with friends.",
-    images: ["https://flexcode.in/images/flexcode-banner.jpg"], 
+    images: ["https://flexcode.in/images/flexcode-banner.jpg"],
   },
   robots: {
     index: true,
@@ -70,15 +71,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
-
-    
     <html lang="en">
-      <link rel="icon" href="/surajbg.png" sizes="any" />
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
-      </body>
-    </html>
+        <link rel="icon" href="/surajbg.png" sizes="any" />
+        <ClerkProvider>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
     </ClerkProvider>
+      </html>
   );
 }
