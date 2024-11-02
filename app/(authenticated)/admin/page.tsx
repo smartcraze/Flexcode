@@ -1,6 +1,6 @@
 import React from 'react';
-import { ModeToggle } from '@/components/Mode-toggle';
-import { useUser, UserButton } from '@clerk/nextjs';
+
+import { UserButton } from '@clerk/nextjs';
 
 function Admin() {
   return (
