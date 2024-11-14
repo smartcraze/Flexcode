@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import type { Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/theme-provider";
-
+import { cookies } from "next/headers";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 
@@ -68,31 +68,33 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const cookieStore = await cookies();
+  const defaultOpen = cookieStore.get("sidebar:state")?.value === "true";
   return (
     <html lang="en">
       <link rel="icon" href="/surajbg.png" sizes="any" />
       <ClerkProvider>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-          >
+        >
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-            >
-            
-            <SidebarProvider>
-              
-              
-              {children}
+          >
+             <SidebarProvider defaultOpen={defaultOpen}>
+              <AppSidebar />
+              <main>
+                <SidebarTrigger />
+                {children}
+              </main>
             </SidebarProvider>
-            
           </ThemeProvider>
         </body>
       </ClerkProvider>
