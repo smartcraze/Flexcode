@@ -4,9 +4,7 @@ import { Metadata } from "next";
 import type { Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/theme-provider";
-import { cookies } from "next/headers";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
+import Sidebarprovider from "@/components/Sidebarprovider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -73,8 +71,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const cookieStore = await cookies();
-  const defaultOpen = cookieStore.get("sidebar:state")?.value === "true";
   return (
     <html lang="en">
       <link rel="icon" href="/surajbg.png" sizes="any" />
@@ -88,13 +84,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-             <SidebarProvider defaultOpen={defaultOpen}>
-              <AppSidebar />
-              <main>
-                <SidebarTrigger />
-                {children}
-              </main>
-            </SidebarProvider>
+            <Sidebarprovider>{children}</Sidebarprovider>
           </ThemeProvider>
         </body>
       </ClerkProvider>

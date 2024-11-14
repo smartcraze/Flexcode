@@ -1,14 +1,15 @@
 
 import { GridBackground } from '@/components/GridBackgorund';
-import React from 'react'
+import Test from '@/Pages/Test';
+import React from 'react';
 
-function Main() {
+function Page() {
   return (
     <>
-      
-      <GridBackground/>
+   <GridBackground/>
+   <Test/>
     </>
-  )
+  );
 }
 
-export default Main;
+export default Page;
