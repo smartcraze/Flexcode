@@ -1,6 +1,6 @@
 
 import { GridBackground } from '@/components/GridBackgorund';
-import Test from '@/Pages/Test';
+import { SidebarTrigger } from '@/components/ui/sidebar';
 import React from 'react'
 
 function Main() {
@@ -8,11 +8,6 @@ function Main() {
     <>
       
       <GridBackground/>
-      
-      
-      
-      
-
     </>
   )
 }
