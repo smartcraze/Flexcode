@@ -5,6 +5,9 @@ import type { Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/theme-provider";
 
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/app-sidebar";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -72,21 +75,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-        <link rel="icon" href="/surajbg.png" sizes="any" />
-        <ClerkProvider>
+      <link rel="icon" href="/surajbg.png" sizes="any" />
+      <ClerkProvider>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
+          >
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          >
-            {children}
+            >
+            
+            <SidebarProvider>
+              
+              
+              {children}
+            </SidebarProvider>
+            
           </ThemeProvider>
         </body>
-    </ClerkProvider>
-      </html>
+      </ClerkProvider>
+    </html>
   );
 }
