@@ -8,7 +8,7 @@ export function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed top-10 inset-x-0 max-w-md mx-auto z-50 sm:block hidden", // Add sm:block and hidden
+        "fixed top-4 inset-x-0 max-w-md mx-auto z-50 sm:block hidden", // Add sm:block and hidden
         className
       )}
     >
