@@ -27,7 +27,7 @@ export default function Home() {
           Stay tuned for more updates!
         </p>
         <Link
-          href="https://smartcraze.online"
+          href="suraj.flexcode.in"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 px-6 py-3 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition-colors"
