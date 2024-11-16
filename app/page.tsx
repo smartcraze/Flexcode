@@ -5,10 +5,7 @@ import React from 'react';
 
 function Page() {
   return (
-    <>
-   <GridBackground/>
-   <Test/>
-    </>
+
   );
 }
 
