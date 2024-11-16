@@ -272,7 +272,7 @@ const SidebarTrigger = React.forwardRef<
       size="icon"
       className={cn(
         "inline-flex items-center justify-center h-6 w-auto p-0", 
-        "bg-opacity-80 rounded-lg shadow-sm", 
+        "bg-opacity-80 rounded-lg shadow-sm ", 
         className
       )}
       onClick={(event) => {
@@ -280,16 +280,16 @@ const SidebarTrigger = React.forwardRef<
         toggleSidebar();
       }}
       style={{
-        position: "fixed",
+        position: "absolute",
         top: "10px", 
         left: "10px",
-        zIndex: 10,
+        zIndex: 100,
         display: "block",
       }}
       {...props}
     >
       <span
-        className="shadow-[0_0_0_3px_rgba(0,0,0,0.2)_inset] bg-purple-950 border  border-black dark:border-white dark:text-white text-black rounded-sm font-bold px-2 py-1"
+        className="shadow-[0_0_0_3px_rgba(0,0,0,0.2)_inset] bg-purple-950 border  border-black dark:border-white dark:text-white text-black rounded-sm font-bold px-2 py-1 block md:hidden"
       >
         ⌘ <span className="ml-1">B</span>
       </span>

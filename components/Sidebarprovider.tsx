@@ -5,10 +5,11 @@ export default async function Sidebarprovider({ children }: { children: React.Re
     const cookieStore = await cookies();
     const defaultOpen = cookieStore.get("sidebar:state")?.value === "true";
   return (
+    
     <SidebarProvider defaultOpen={defaultOpen}>
       <AppSidebar />
       <main>
-        <SidebarTrigger />
+        <SidebarTrigger  />
         {children}
       </main>
     </SidebarProvider>
