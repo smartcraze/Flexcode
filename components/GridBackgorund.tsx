@@ -1,3 +1,4 @@
+import { HoverBorderGradient } from "./ui/hover-border-gradient";
 import { Spotlight } from "./ui/spotlight";
 
 export function GridBackground() {
@@ -56,14 +57,14 @@ export function GridBackground() {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-8">
-          <a
-            href="/get-started"
-            className="px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold rounded-full shadow-lg hover:shadow-2xl transition-shadow duration-200"
-          >
-            Get Started with Flex-Code
-          </a>
-        </div>
+        <HoverBorderGradient
+        containerClassName="rounded-full"
+        as="button"
+        className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+      >
+        {/* <AceternityLogo /> */}
+        <span>Get Started</span>
+      </HoverBorderGradient>
       </div>
     </div>
   );
