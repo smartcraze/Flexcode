@@ -1,7 +1,11 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { Metadata } from "next";
-import type { Viewport } from 'next'
+import type { Viewport } from "next";
+import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider } from "@/components/theme-provider";
+import Sidebarprovider from "@/components/Sidebarprovider";
+import { Navbar } from "@/components/FloatingNavbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,8 +18,8 @@ const geistMono = localFont({
   weight: "100 900",
 });
 export const viewport: Viewport = {
-  themeColor: 'black',
-}
+  themeColor: "black",
+};
 export const metadata: Metadata = {
   title: "FlexCode - Your Project Hub for Student Collaboration",
   description:
@@ -55,10 +59,7 @@ export const metadata: Metadata = {
     title: "FlexCode - Collaborate on Projects",
     description:
       "Join FlexCode to find project mates, complete industry-level projects, and earn rewards while collaborating with friends.",
-    images: ["https://flexcode.in/images/flexcode-banner.jpg"], 
-  },
-  icons: {
-    icon: "/fav.ico",
+    images: ["https://flexcode.in/images/flexcode-banner.jpg"],
   },
   robots: {
     index: true,
@@ -66,16 +67,34 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
-      </body>
+      <link rel="icon" href="/surajbg.png" sizes="any" />
+      <ClerkProvider>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <div>
+            <Navbar/>
+          </div>
+
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Sidebarprovider>
+              {children}
+              </Sidebarprovider>
+          </ThemeProvider>
+        </body>
+      </ClerkProvider>
     </html>
   );
 }
