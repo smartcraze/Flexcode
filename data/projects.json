@@ -1,0 +1,20 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "image": "/binary.png",
+      "topic": "Binary Search",
+      "description": "Learn through visualising how it works ",
+      "link": "https://binarysearch.smartcraze.online"
+    },
+    {
+      "id": 2,
+      "image": "/maxmin.png",
+      "topic": "Max Min Heap",
+      "description": "Visualise how max min heap works addition of heap and deletion of heap",
+      "link": "https://heap.smartcraze.online"
+    }
+  ]
+}
+
+  

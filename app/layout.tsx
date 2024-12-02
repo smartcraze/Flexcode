@@ -5,7 +5,8 @@ import type { Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/theme-provider";
 import Sidebarprovider from "@/components/Sidebarprovider";
-import { Navbar } from "@/components/FloatingNavbar";
+import { Navbar } from "@/components/Navbar";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -79,19 +80,15 @@ export default async function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <div>
-            <Navbar/>
-          </div>
-
+          <Navbar/>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <Sidebarprovider>
               {children}
-              </Sidebarprovider>
+              
           </ThemeProvider>
         </body>
       </ClerkProvider>
