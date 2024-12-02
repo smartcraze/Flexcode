@@ -13,6 +13,13 @@
       "topic": "Max Min Heap",
       "description": "Visualise how max min heap works addition of heap and deletion of heap",
       "link": "https://heap.smartcraze.online"
+    },
+    {
+      "id": 3,
+      "image": "/toh.png",
+      "topic": "Tower of honai",
+      "description": "Visualise how tower of honai works ",
+      "link": "https:/towerofhonai.smartcraze.online"
     }
   ]
 }
