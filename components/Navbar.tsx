@@ -27,12 +27,7 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50   ">
       <div className="container flex items-center justify-between p-4">
         <Link href="/" className="text-2xl  font-bold">
-          {/* <Image
-            src="/sclogo.png"
-            alt="logo"
-            width={100}
-            height={100}
-          /> */}
+         
           <h1 className="text-3xl">Flexcode</h1>
           
         </Link>
