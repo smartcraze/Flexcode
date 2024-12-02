@@ -4,7 +4,6 @@ import { Metadata } from "next";
 import type { Viewport } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/theme-provider";
-import Sidebarprovider from "@/components/Sidebarprovider";
 import { Navbar } from "@/components/Navbar";
 
 

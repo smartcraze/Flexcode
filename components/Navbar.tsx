@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/sheet";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
+import { ModeToggle } from "./Mode-toggle";
 
 const links = [
   { href: "/", label: "Home" },
@@ -47,6 +48,7 @@ export function Navbar() {
           <SignedOut>
             <SignInButton />
           </SignedOut>
+          <ModeToggle/>
         </div>
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
