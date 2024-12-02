@@ -74,7 +74,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <link rel="icon" href="/surajbg.png" sizes="any" />
+      <link rel="icon" href="/ico.png" className=""/>
       <ClerkProvider>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
