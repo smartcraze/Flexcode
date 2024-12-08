@@ -27,7 +27,8 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50   ">
       <div className="container flex items-center justify-between p-4">
         <Link href="/" className="text-2xl  font-bold">
-          <h1 className ="text-3xl">Flexcode</h1>
+         
+          <h1 className="text-3xl">Flexcode</h1>
           
         </Link>
         <div className="hidden md:flex space-x-4">
