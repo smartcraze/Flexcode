@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
+import { LinkPreview } from './ui/link-preview';
 
 interface FlexcodeItem {
   _id: string;
@@ -39,7 +40,7 @@ export const Home: React.FC = () => {
           {data.map((item) => (
             <div
               key={item._id}
-              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden"
+              className="bg-white dark:bg-black border border-gray-200 dark: rounded-lg shadow-lg overflow-hidden"
             >
               <img
                 src={item.image}
@@ -50,12 +51,12 @@ export const Home: React.FC = () => {
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{item.title}</h3>
                 <p className="text-gray-600 mt-2 dark:text-gray-300">{item.description}</p>
                 <div className="flex justify-center mt-4">
-                  <Link
-                    href={item.link}
+                  <LinkPreview
+                    url={item.link}
                     className="inline text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                   >
                     Try Now
-                  </Link>
+                  </LinkPreview>
                 </div>
                 
               </div>
